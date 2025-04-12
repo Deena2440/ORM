@@ -6,7 +6,9 @@ To develop a Django application to store and retrieve data from a Movies Databas
 
 ## ENTITY RELATIONSHIP DIAGRAM
 
-![Screenshot 2025-03-23 154439](https://github.com/user-attachments/assets/6035c46f-77c1-4f7c-83d7-5785badf1c38)
+![Screenshot 2025-04-12 164334](https://github.com/user-attachments/assets/e99daa80-c5ea-4aa9-a661-095c14da316d)
+
+
 
 
 ## DESIGN STEPS
@@ -25,25 +27,18 @@ Execute Django admin and create details for 10 books
 
 ## PROGRAM
 ~~~
-models.py
 from django.db import models
-from django.contrib import admin
-class Movie(models.Model):
-	Name=models.CharField(max_length=20,primary_key=True)
-	Genre=models.CharField(max_length=20)
-	Cost=models.IntegerField()
-	Run=models.FloatField()
-	Rating=models.IntegerField()
-class MovieAdmin(admin.ModelAdmin):
-	list_display=("Name","Genre","Cost","Run","Rating")
-
-admin.py
-from django.contrib import admin
-from .models import Movie,MovieAdmin
-admin.site.register(Movie,MovieAdmin)
+class Student(models.Model):
+user=models.CharField(max_length=100,primary_key=True)
+password=models.CharField(max_length=100)
+email=models.EmailField()
+phone=models.CharField(max_length=100)
+profile=models.ImageField(upload_to='profile/')
+address=models.TextField()
 
 ~~~
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/b85f0e19-23fd-49e3-abfb-a36df0556f26)
+![image](https://github.com/user-attachments/assets/84ab084d-27c7-40c4-843b-8bc6406238ed)
+
 ## RESULT
 Thus the program for creating movies database using ORM hass been executed successfully.
